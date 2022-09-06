@@ -27,7 +27,7 @@ namespace BookStore.Repository
             {
                 new Book(){Id = 1, Title="MVC", Author="Nazim"},
                 new Book(){Id = 2, Title="C#", Author="Nazim"},
-                new Book(){Id = 3, Title="JAVA", Author="Nazim"},
+                new Book(){Id = 3, Title="JAVA", Author="Akash"},
                 new Book(){Id = 4, Title="Angular", Author="Nazim"},
             };
         }
