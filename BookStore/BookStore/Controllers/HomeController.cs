@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookStore.Controllers
 {
-    public class HomeController: Controller
+    public class HomeController: Controller 
     {
         public ViewResult Index()
-        {
-            return View("AboutUs");
+        { 
+            return View();
         }
         public ViewResult AboutUs()
         {
