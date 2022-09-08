@@ -6,27 +6,29 @@
 
 
 
-<div class="container">
-    <h1 class="display-4 text-center">All Books</h1>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h3 class="card-title">@item.Title</h3>
-                        <p class="card-text">@item.Description</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+<div class="py-5">
+    <div class="container">
+        <h1 class="display-4 pb-5 text-center">All Books</h1>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h3 class="card-title">@item.Title</h3>
+                            <p class="card-text">@item.Description</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author: @item.Author</small>
                             </div>
-                            <small class="text-muted">Author: @item.Author</small>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
 
+        </div>
     </div>
 </div>
