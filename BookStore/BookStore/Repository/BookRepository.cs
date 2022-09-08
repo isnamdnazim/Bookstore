@@ -25,10 +25,12 @@ namespace BookStore.Repository
         {
             return new List<Book>()
             {
-                new Book(){Id = 1, Title="MVC", Author="Nazim"},
-                new Book(){Id = 2, Title="C#", Author="Nazim"},
-                new Book(){Id = 3, Title="JAVA", Author="Akash"},
-                new Book(){Id = 4, Title="Angular", Author="Nazim"},
+                new Book(){Id = 1, Title="MVC", Author="Nazim", Description="This is the description for MVC Book"},
+                new Book(){Id = 2, Title="C#", Author="Md Uddin", Description="This is the description for C# Book"},
+                new Book(){Id = 3, Title="JAVA", Author="Akash", Description="This is the description for JAVA Book"},
+                new Book(){Id = 4, Title="Angular", Author="Nazim", Description="This is the description for Angular Book"},
+                new Book(){Id = 5, Title="JavaScript", Author="Md Nazim", Description="This is the description for JavaScript Book"},
+                new Book(){Id = 5, Title="Azure DevOps", Author="Md Emon", Description="This is the description for Azure DevOps Book"},
             };
         }
     }
