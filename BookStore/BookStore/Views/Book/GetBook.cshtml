@@ -1,12 +1,14 @@
-﻿
+﻿@using BookStore.Models;
+@model Book
 @{
     Layout = "_Layout";
 }
 
 <div class="container">
+    <h3 class="display-4">Book Details</h3>
     <div class="row">
         <div class="col-md-6">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide rounded" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -34,7 +36,61 @@
             </div>
         </div>
         <div class="col-md-6">
-
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <span class="label label-primary">By: </span>
+                    <span class="monospaced">@Model.Author</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="description">
+                        @Model.Description
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary">
+                        Read Now
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item"><span class="font-weight-bold">Category - </span> @Model.Category</li>
+                <li class="list-group-item"><span class="font-weight-bold">Total Pages - </span> @Model.TotalPages</li>
+                <li class="list-group-item"><span class="font-weight-bold">Language - </span> @Model.Language</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="py-5">
+        <h3 class="h3">Similar Books</h3>
+        <div class="row">
+            @for (int i = 0; i < 5; i++)
+            {            
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">@Model.Title</h3>
+                        <p class="card-text">@Model.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="/book/getbook/@Model.Id " class="btn btn-sm btn-outline-secondary">View Details</a>
+                            </div>
+                            <small class="text-muted">Author: @Model.Author</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
         </div>
     </div>
 </div>
