@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "All Books";
 }
-@model IEnumerable<Book>
+@*@model IEnumerable<Book>*@
 
 
 <div class="py-5">
@@ -18,7 +18,8 @@
                             <p class="card-text">@item.Description</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="/book/getbook/@item.Id " class="btn btn-sm btn-outline-secondary">View Details</a>
+                                    <a asp-controller="book" asp-action="getbook" asp-route-id="@item.Id"
+                                      asp-route-nameofBook="@item.Title" class="btn btn-sm btn-outline-secondary">View Details</a>
                                 </div>
                                 <small class="text-muted">Author: @item.Author</small>
                             </div>

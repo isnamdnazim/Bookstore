@@ -10,16 +10,24 @@ namespace BookStore.Controllers
 {
     public class HomeController: Controller 
     {
+        [ViewData]
+        public string Title { get; set; }
+        [ViewData]
+        public string CustomProperty { get; set; }
+        [ViewData]
+        public Book Book { get; set; }
         public ViewResult Index()
         {
-            ViewData["property1"] = "Nazim";
+            CustomProperty = "Custom Data";
+            Title = "Home Page From Cotroller";
+            Book = new Book() { Id = 1, Title ="Nazim"};
 
-            ViewData["property2"] = new Book() {Author= "Nazim", Id= 1 };
 
             return View();
         }
         public ViewResult AboutUs()
         {
+            Title = "About Page From Cotroller";
             return View();
         }
         public ViewResult ContactUs()

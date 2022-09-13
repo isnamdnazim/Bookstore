@@ -1,11 +1,16 @@
-﻿@{ 
+﻿@*@{ 
     ViewData["Title"] = "Home";
-}
+    
+}*@
+
+@*@{ 
+    var book =  ViewData["Book"] as Book;
+}*@
 
 <section class="p-5 text-center">
     <div class="container">
         <h1>Welcome to Bookstore</h1>
-
+        <h1>@ViewData["CustomProperty"]</h1>
         <p class="lead">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a

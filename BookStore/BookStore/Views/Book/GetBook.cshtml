@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Book Detail " + Model.Title;
 }
-@model Book
+@*@model Book*@
 
 
 <div class="container">
@@ -83,7 +83,7 @@
                             <p class="card-text">@Model.Description</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="/book/getbook/@Model.Id " class="btn btn-sm btn-outline-secondary">View Details</a>
+                                    <a href="/book/getbook/@Model.Id" class="btn btn-sm btn-outline-secondary">View Details</a>
                                 </div>
                                 <small class="text-muted">Author: @Model.Author</small>
                             </div>

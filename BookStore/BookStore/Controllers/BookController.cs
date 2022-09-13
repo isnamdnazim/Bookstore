@@ -3,6 +3,7 @@ using BookStore.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,8 +22,9 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        public ViewResult GetBook(int id)
+        public ViewResult GetBook(int id, string nameofBook)
         {
+            
             var data =  _bookRepository.GetBook(id);
             return View(data);
         }
