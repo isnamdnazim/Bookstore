@@ -1,14 +1,12 @@
 ﻿@{ 
-    dynamic data = ViewBag.Data;
+    ViewData["Title"] = "Home";
 }
 
 <section class="p-5 text-center">
     <div class="container">
-        <h1>Welcome to Bookstore @ViewBag.Title</h1>
+        <h1>Welcome to Bookstore</h1>
+
         <p class="lead">
-            @data.Id @data.Name<br />
-            Id = @ViewBag.Type.Id <br />
-            Name = @ViewBag.Type.Author
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
             type specimen book.

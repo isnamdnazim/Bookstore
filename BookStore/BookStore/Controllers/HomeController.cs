@@ -12,12 +12,10 @@ namespace BookStore.Controllers
     {
         public ViewResult Index()
         {
-            ViewBag.Title = "Nazim";
-            dynamic data = new ExpandoObject();
-            data.Id = 1;
-            data.Name = "Nazim";
-            ViewBag.Data = data;
-            ViewBag.Type = new Book() { Id=5,Author = "This is Author" };
+            ViewData["property1"] = "Nazim";
+
+            ViewData["property2"] = new Book() {Author= "Nazim", Id= 1 };
+
             return View();
         }
         public ViewResult AboutUs()
