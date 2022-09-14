@@ -22,7 +22,8 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        public ViewResult GetBook(int id, string nameofBook)
+        [Route("book-store/{id}", Name = "getAllBook")]
+        public ViewResult GetBook(int id)
         {
             
             var data =  _bookRepository.GetBook(id);
