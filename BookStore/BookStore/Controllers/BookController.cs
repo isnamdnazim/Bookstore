@@ -36,5 +36,16 @@ namespace BookStore.Controllers
             return View();
         }
 
+        public ViewResult AddNewBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult AddNewBook(Book book)
+        {
+            return View();
+        }
+
     }
 }
