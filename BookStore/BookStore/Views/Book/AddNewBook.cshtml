@@ -29,19 +29,19 @@
             <span class="text-danger" asp-validation-for="Title"></span>
         </div>
         <div class="form-group">
-            <label asp-for="Language"></label>
-            <select asp-for="Language" class="form-control" asp-items="@ViewBag.Language">
+            <label asp-for="LanguageId"></label>
+            <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.language">
                 <option value="">Please Choose The Book Language</option>
             </select>
-            <span class="text-danger" asp-validation-for="Language"></span>
+            <span class="text-danger" asp-validation-for="LanguageId"></span>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="LanguageEnum"></label>
             <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
                 <option value="">Please Choose The Book Language</option>
             </select>
             <span class="text-danger" asp-validation-for="LanguageEnum"></span>
-        </div>
+        </div>*@
         <div class="form-group">
             <label asp-for="Author"></label>
             <input asp-for="Author" class="form-control" />
