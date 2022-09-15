@@ -1,4 +1,5 @@
 ﻿@model Book
+@using BookStore.Enums
 @{
     ViewData["Title"] = "Add New Book";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -35,11 +36,11 @@
             <span class="text-danger" asp-validation-for="Language"></span>
         </div>
         <div class="form-group">
-            <label asp-for="MultiLanguage"></label>
-            <select asp-for="MultiLanguage" class="form-control" asp-items="@ViewBag.Language" multiple>
+            <label asp-for="LanguageEnum"></label>
+            <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
                 <option value="">Please Choose The Book Language</option>
             </select>
-            <span class="text-danger" asp-validation-for="MultiLanguage"></span>
+            <span class="text-danger" asp-validation-for="LanguageEnum"></span>
         </div>
         <div class="form-group">
             <label asp-for="Author"></label>
