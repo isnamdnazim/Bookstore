@@ -21,7 +21,7 @@ namespace BookStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookStoreContext>(options => 
-            options.UseSqlServer("Server=NAZIM;Databese=BStore;Integrated Security = True;"));
+            options.UseSqlServer("Server=NAZIM;Database=BStore;Integrated Security = True;"));
             services.AddControllersWithViews();
 #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation();
