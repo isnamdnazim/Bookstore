@@ -1,6 +1,7 @@
 ﻿using BookStore.Models;
 using BookStore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -40,7 +41,21 @@ namespace BookStore.Controllers
         {
             var model = new Book()
             {
-                Language = "English"
+                //Language = "1"
+            };
+            //ViewBag.Language = new SelectList (new List<string>() {"Bangla", "English", "Arabic" });
+            //ViewBag.Language = new SelectList (GetLanguage(),"Id","Text");
+            //ViewBag.Language = GetLanguage().Select(x => new SelectListItem() 
+            //{ 
+            //    Text = x.Text ,
+            //    Value = x.Id.ToString()
+            //}).ToList();
+            ViewBag.Language = new List<SelectListItem>()
+            {
+                new SelectListItem(){Value="1",Text="English"},    
+                new SelectListItem(){Value="2",Text="Bangla", Selected= true},    
+                new SelectListItem(){Value="3",Text="Arabic"},    
+                new SelectListItem(){Value="4",Text="Hindi",Disabled= true},    
             };
             ViewBag.isSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -60,9 +75,23 @@ namespace BookStore.Controllers
             }
             //ViewBag.isSuccess = false;
             //ViewBag.BookId = 0;
-            ModelState.AddModelError("","This is Custom Error");
+            //ViewBag.Language = new SelectList(new List<string>() { "Bangla", "English", "Arabic" });
+            ViewBag.Language = new SelectList(GetLanguage(), "Id", "Text");
+
+            //ModelState.AddModelError("","This is Custom Error");
             return View();
         }
+
+        private List<LanguageModel> GetLanguage()
+        {
+            return new List<LanguageModel>()
+            {
+                new LanguageModel(){Id=1, Text="Bangla"},
+                new LanguageModel(){Id=2, Text="English"},
+                new LanguageModel(){Id=3, Text="Arabic"},
+            };
+        }
+
 
     }
 }
