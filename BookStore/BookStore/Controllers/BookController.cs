@@ -12,9 +12,9 @@ namespace BookStore.Controllers
     public class BookController : Controller
     {
         private readonly BookRepository  _bookRepository= null;
-        public BookController()
+        public BookController(BookRepository bookRepository)
         {
-            _bookRepository = new BookRepository();
+            _bookRepository = bookRepository;
         }
         public ViewResult GetAllBooks()
         {
@@ -36,14 +36,21 @@ namespace BookStore.Controllers
             return View();
         }
 
-        public ViewResult AddNewBook()
+        public ViewResult AddNewBook( bool isSuccess = false, int bookId = 0)
         {
+            ViewBag.isSuccess = isSuccess;
+            ViewBag.BookId = bookId;
             return View();
         }
 
         [HttpPost]
-        public ViewResult AddNewBook(Book book)
+        public IActionResult AddNewBook(Book book)
         {
+            int id = _bookRepository.AddNewBook(book);
+            if (id > 0)
+            {
+                return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id});
+            }
             return View();
         }
 

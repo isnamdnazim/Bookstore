@@ -1,4 +1,5 @@
-﻿using BookStore.Models;
+﻿using BookStore.Data;
+using BookStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,32 @@ namespace BookStore.Repository
 {
     public class BookRepository
     {
+        public readonly BookStoreContext _context = null;
+
+        public BookRepository(BookStoreContext context)
+        {
+            _context = context;
+        }
+
+        public int AddNewBook(Book book)
+        {
+            var newBook = new Books()
+            {
+                Author = book.Author,
+                CreatedOn = DateTime.UtcNow,
+                Description = book.Description,
+                Title = book.Title,
+                TotalPages = book.TotalPages,
+                UpdatedOn = DateTime.UtcNow
+            };
+
+            _context.Books.Add(newBook);
+            _context.SaveChanges();
+
+            return newBook.Id;
+
+        }
+
         public List<Book> GetAllBooks()
         {
             return DataSource();
