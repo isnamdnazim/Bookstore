@@ -14,12 +14,15 @@ namespace BookStore.Models
         public string Title { get; set; }
         [Required(ErrorMessage = "Please Enter The Author Name of Your Book")]
         public string Author { get; set; }
-        [StringLength(120, MinimumLength = 90)]
+
         public string Description { get; set; }
         public string Category { get; set; }
         public string Language { get; set; }
         [Required(ErrorMessage = "Please Enter The Total Pages of Your Book")]
         [Display(Name ="Total Pages")]
         public int? TotalPages { get; set; }
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Choose Date and Time")]
+        public string MyField { get; set; }
     }
 }
