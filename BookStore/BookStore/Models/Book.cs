@@ -11,9 +11,9 @@ namespace BookStore.Models
     public class Book
     {
         public int Id { get; set; }
-        //[StringLength(50, MinimumLength =5)]
-        //[Required(ErrorMessage ="Please Enter The Title of Your Book")]
-        [MyCustomValidadtion("Azue")]
+        [StringLength(50, MinimumLength = 5)]
+        [Required(ErrorMessage = "Please Enter The Title of Your Book")]
+        //[MyCustomValidadtion("Azue")]
         public string Title { get; set; }
         [Required(ErrorMessage = "Please Enter The Author Name of Your Book")]
         public string Author { get; set; }

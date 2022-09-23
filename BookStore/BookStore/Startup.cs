@@ -25,6 +25,10 @@ namespace BookStore
             options.UseSqlServer("Server=NAZIM;Database=BStore;Integrated Security = True;"));
             services.AddControllersWithViews();
 #if DEBUG
+            //disable client side validation code
+            //services.AddRazorPages().AddRazorRuntimeCompilation().AddViewOptions(option => {
+            //    option.HtmlHelperOptions.ClientValidationEnabled = false;
+            //});
             services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
             services.AddScoped<BookRepository, BookRepository>();
