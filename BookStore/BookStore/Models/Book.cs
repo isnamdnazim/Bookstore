@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using BookStore.Enums;
 using BookStore.Helpers;
+using Microsoft.AspNetCore.Http;
 
 namespace BookStore.Models
 {
@@ -30,5 +31,8 @@ namespace BookStore.Models
         [DataType(DataType.DateTime)]
         [Display(Name = "Choose Date and Time")]
         public string MyField { get; set; }
+        [Display(Name = "Choose The Cover Photo of Your Book")]
+        [Required]
+        public IFormFile CoverPhoto { get; set; }
     }
 }

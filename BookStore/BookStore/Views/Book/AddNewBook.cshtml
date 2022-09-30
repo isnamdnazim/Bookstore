@@ -44,12 +44,12 @@
             <span class="text-danger" asp-validation-for="LanguageId"></span>
         </div>
         @*<div class="form-group">
-                <label asp-for="LanguageEnum"></label>
-                <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
-                    <option value="">Please Choose The Book Language</option>
-                </select>
-                <span class="text-danger" asp-validation-for="LanguageEnum"></span>
-            </div>*@
+            <label asp-for="LanguageEnum"></label>
+            <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
+                <option value="">Please Choose The Book Language</option>
+            </select>
+            <span class="text-danger" asp-validation-for="LanguageEnum"></span>
+        </div>*@
         <div class="form-group">
             <label asp-for="Author"></label>
             <input asp-for="Author" class="form-control" />
@@ -66,6 +66,14 @@
             <input asp-for="TotalPages" class="form-control" />
             <span class="text-danger" asp-validation-for="TotalPages"></span>
 
+        </div>
+        <div class="form-group">
+            <label asp-for="CoverPhoto"></label>
+            <div class="mb-3">
+                @*<label for="formFile" class="form-label">Default file input example</label>*@
+                <input class="form-control" asp-for="CoverPhoto" id="formFile">
+            </div>
+            <span class="text-danger" asp-validation-for="CoverPhoto"></span>
         </div>
         <div class="form-group">
             <input type="submit" value="Add Book" class="btn btn-primary" />
